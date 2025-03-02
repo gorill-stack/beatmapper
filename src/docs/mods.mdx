@@ -1,4 +1,49 @@
----
++3
+-3
+    "name": "NoodleExtensions",
+    "id": "noodleextensions",
+    "author": "StackDoubleFlow",
+    "version": "0.4.1",
+    "version": "1.0.0",
+    "packageId": "com.beatgames.beatsaber",
+    "packageVersion": "1.16.4",
+    "description": "gaming",
+    "packageVersion": "1.17.1",
+    "description": "This adds a host of new things you can do with your maps. Original mod for PC by Aeroluna. Contributions by Fern and Sc2ad.",
+    "modFiles": [
+      "libnoodleextensions.so",
+      "libcustom-json-data.so",
++1
+-1
+@@ -4,7 +4,7 @@
+  "info": {
+    "name": "Noodle Extensions",
+    "id": "NoodleExtensions",
+    "version": "0.4.1",
+    "version": "1.0.0",
+    "url": null,
+    "additionalData": {
+      "overrideSoName": "libnoodleextensions.so"
+‎scripts/buildQMOD.sh
+-5
+Original file line number	Diff line number	Diff line change
+@@ -1,10 +1,5 @@
+#!/bin/bash
+
+NDKPath=`cat ndkpath.txt`
+buildScript="$NDKPath/build/ndk-build"
+./$buildScript NDK_PROJECT_PATH=. APP_BUILD_SCRIPT=./Android.mk NDK_APPLICATION_MK=./Application.mk
+mkdir BMBFBuild
+cp "./mod.json" "./libs/arm64-v8a/libnoodleextensions.so" ./BMBFBuild
+cp "./libs/arm64-v8a/libcustom-json-data.so" ./BMBFBuild
+‎src/NoodleExtensions.cpp
+-1
+Original file line number	Diff line number	Diff line change
+@@ -7,5 +7,4 @@ void InstallAndRegisterAll() {
+    Hooks::InstallHooks(logger);
+    NEEvents::AddEventCallbacks(logger);
+    PinkCore::RequirementAPI::RegisterInstalled("Noodle Extensions");
+    PinkCore::RequirementAPI::RegisterInstalled("Chroma");---
 title: Mod Support
 subtitle: Enabling and working with Beat Saber mods
 ---
